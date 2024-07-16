@@ -28,7 +28,7 @@ const HomePage = () => {
   return (
     <HomeContainer>
       <h1>External Debt and Education Expenditure</h1>
-      <p>To select two or more countries from <i><b>country slicers</b></i>, hold <i><b>CTRL key down </b></i>while selecting.</p>
+      <p>To pick two or more countries from <i><b>country slicers</b></i>, hold <i><b>CTRL key down </b></i>while selecting.</p>
       <IframeContainer>
         <ResponsiveIframe
           title="externalDebtEducationExpenditure"
