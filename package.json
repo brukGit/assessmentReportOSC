@@ -1,7 +1,9 @@
 {
-  "name": "dashboard-osc",
+  "name": "assessmentReportOSC",
+  "homepage": "https://brukgit.github.io/assessmentReportOSC",
   "version": "0.1.0",
   "private": true,
+
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
