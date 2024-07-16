@@ -8,7 +8,7 @@ const HomeContainer = styled.div`
 const IframeContainer = styled.div`
   position: relative;
   overflow: hidden;
-  padding-top: 49.8%; // (373.5 / 600 * 100) * 0.8
+  padding-top: 45%; 
   margin-bottom: 2rem;
   width: 80%; // 80% of the parent container's width
   margin-left: auto;
@@ -28,6 +28,7 @@ const HomePage = () => {
   return (
     <HomeContainer>
       <h1>External Debt and Education Expenditure</h1>
+      <p>To select two or more countries from <i><b>country slicers</b></i>, hold <i><b>CTRL key down </b></i>while selecting.</p>
       <IframeContainer>
         <ResponsiveIframe
           title="externalDebtEducationExpenditure"

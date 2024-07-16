@@ -1,74 +1,110 @@
-<<<<<<< HEAD
-# Getting Started with Create React App
+# Report page for assessment task.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This repository contains a React application showcasing an assessment with a home for dashboard, and documentation page. The application is styled using `styled-components` and is deployed to GitHub Pages.
 
-## Available Scripts
+## Project Structure
 
-In the project directory, you can run:
+- **App.js**: Main entry point of the application, handles routing and rendering of components.
+- **LandingPage.js**: Displays a welcome message and a button to navigate to the home page.
+- **HomePage.js**: Contains the main dashboard content.
+- **DocumentationPage.js**: Contains the documentation content.
+- **AppContext.js**: Provides global context for the application.
 
-### `npm start`
+## Navigation Bar
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+The navigation bar is included in the main `App.js` and provides links to the Home and Documentation pages. It also displays a logo.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+```jsx
+const NavigationBar = ({ currentPath, navigate }) => (
+  <NavBar>
+    <NavLinks>
+      <NavLink onClick={() => navigate('/home')} active={currentPath === '/home'}>Dashboard</NavLink>
+      <NavLink onClick={() => navigate('/documentation')} active={currentPath === '/documentation'}>Documentation</NavLink>
+    </NavLinks>
+    <Logo src="/logo.png" alt="Logo" />
+  </NavBar>
+);
+```
 
-### `npm test`
+## Routing
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+The routing logic is handled within `App.js` using `react-router-dom`.
 
-### `npm run build`
+```jsx
+const App = () => {
+  const [currentPath, setCurrentPath] = useState(window.location.pathname);
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+  const navigate = (path) => {
+    window.history.pushState({}, '', path);
+    setCurrentPath(path);
+  };
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+  useEffect(() => {
+    const handlePopState = () => setCurrentPath(window.location.pathname);
+    window.addEventListener('popstate', handlePopState);
+    return () => window.removeEventListener('popstate', handlePopState);
+  }, []);
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+  const renderContent = () => {
+    switch (currentPath) {
+      case '/':
+        return <LandingPage navigate={navigate} />;
+      case '/home':
+        return (
+          <>
+            <NavigationBar currentPath={currentPath} navigate={navigate} />
+            <HomePage />
+          </>
+        );
+      case '/documentation':
+        return (
+          <>
+            <NavigationBar currentPath={currentPath} navigate={navigate} />
+            <DocumentationPage />
+          </>
+        );
+      default:
+        return <div>404 Not Found</div>;
+    }
+  };
 
-### `npm run eject`
+  return (
+    <AppProvider>
+      <GlobalStyle />
+      {renderContent()}
+    </AppProvider>
+  );
+};
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+export default App;
+```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Deployment to GitHub Pages
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+To deploy the application to GitHub Pages:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+1. Install `gh-pages`:
 
-## Learn More
+   ```bash
+   npm install --save gh-pages
+   ```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+2. Update `package.json` with the following:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+   ```json
+   "homepage": "https://brukeGit.github.io/assessmentReportOSC",
+   "scripts": {
+     "predeploy": "npm run build",
+     "deploy": "gh-pages -d build"
+   }
+   ```
 
-### Code Splitting
+3. Deploy the application:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+   ```bash
+   npm run deploy
+   ```
 
-### Analyzing the Bundle Size
+## License
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-=======
-# assessmentReportOSC
->>>>>>> origin/main
+This project is licensed under the MIT License.
