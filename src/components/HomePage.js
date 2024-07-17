@@ -29,16 +29,17 @@ const HomePage = () => {
     <HomeContainer>
       <h1>External Debt and Education Expenditure</h1>
       <p>To pick two or more countries from <i><b>country slicers</b></i>, hold <i><b>CTRL key down </b></i>while selecting.</p>
-      <IframeContainer>
-        <ResponsiveIframe
-          title="externalDebtEducationExpenditure"
-          width="600"
-          height="373.5"
-          src="https://app.powerbi.com/view?r=eyJrIjoiNTViY2U2Y2EtMTAwYi00MmYyLTllNGMtNWU5YjEwMjZjZjJhIiwidCI6ImFiYTRhZjg0LTI3ZmQtNDBkMS1iYmMzLThkYWQ2MGVjZWFiNyJ9&pageName=ReportSection3b5768b901005bb811c8"
-          frameBorder="0"
-          allowFullScreen
-        />
-      </IframeContainer>
+    <IframeContainer>
+    <ResponsiveIframe
+        title="externalDebtEducationExpenditure"
+        width="600"
+        height="373.5"
+        src="https://app.powerbi.com/view?r=eyJrIjoiMTBlZjI1ZWYtZTRkZS00MTkxLWI2ODEtNDJlMjY5MmFlMmM2IiwidCI6ImFiYTRhZjg0LTI3ZmQtNDBkMS1iYmMzLThkYWQ2MGVjZWFiNyJ9"
+        frameBorder="0"
+        allowFullScreen
+    />
+    </IframeContainer>
+
     </HomeContainer>
   );
 };
