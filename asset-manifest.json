@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/assessmentReportOSC/static/css/main.e6c13ad2.css",
-    "main.js": "/assessmentReportOSC/static/js/main.c5ca3906.js",
+    "main.js": "/assessmentReportOSC/static/js/main.4016a0ff.js",
     "static/js/453.35f85ce6.chunk.js": "/assessmentReportOSC/static/js/453.35f85ce6.chunk.js",
     "static/media/model_view.jpg": "/assessmentReportOSC/static/media/model_view.b25c1b06c1b0dd73c2dd.jpg",
     "static/media/logo.png": "/assessmentReportOSC/static/media/logo.d86860fe33201fbb8706.png",
     "index.html": "/assessmentReportOSC/index.html",
     "main.e6c13ad2.css.map": "/assessmentReportOSC/static/css/main.e6c13ad2.css.map",
-    "main.c5ca3906.js.map": "/assessmentReportOSC/static/js/main.c5ca3906.js.map",
+    "main.4016a0ff.js.map": "/assessmentReportOSC/static/js/main.4016a0ff.js.map",
     "453.35f85ce6.chunk.js.map": "/assessmentReportOSC/static/js/453.35f85ce6.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.e6c13ad2.css",
-    "static/js/main.c5ca3906.js"
+    "static/js/main.4016a0ff.js"
   ]
 }
